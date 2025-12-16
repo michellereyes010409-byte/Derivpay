@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tracking Verification</title>
+    <style>
+         :root {
+            --bg: #f6f8fa;
+            --card-bg: #fff;
+            --accent: #e6007a;
+            --button: #0b84ff;
+            --muted: #bfc9cd;
+            --shadow: 0 18px 30px rgba(11, 13, 30, 0.06), 0 6px 12px rgba(11, 13, 30, 0.04);
+            font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #fbfcfe 60%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .wrapper {
+            width: min(760px, 92%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 0;
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 640px;
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 48px 48px 52px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            margin: 0 0 24px;
+            font-size: 34px;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .input-wrap {
+            margin: 12px auto 22px;
+            max-width: 520px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 22px 20px;
+            border-radius: 12px;
+            border: 1px solid #e6ecec;
+            background: linear-gradient(180deg, #f7f9f9, #f1f6f6);
+            font-size: 18px;
+            color: #333;
+            outline: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 34px;
+            background: var(--button);
+            color: #fff;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(11, 132, 255, 0.18);
+        }
+        
+        .small {
+            font-size: 14px;
+            color: #6b7a7f;
+            margin-top: 18px;
+        }
+        
+        .payment-box {
+            margin-top: 20px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #f8fafb;
+            border-radius: 10px;
+            padding: 14px 16px;
+            border: 1px solid #eef5f6;
+            text-align: left;
+            color: #33464a;
+            font-size: 14.5px;
+            line-height: 1.45;
+        }
+        
+        .payment-box b {
+            color: #0b3542;
+        }
+        
+        @media (max-width:420px) {
+            .card {
+                padding: 28px 20px 36px;
+                border-radius: 14px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            input[type="text"] {
+                padding: 16px;
+                font-size: 16px;
+            }
+            .btn {
+                padding: 10px 22px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card" role="region" aria-label="Tracking verification">
+
+            <h1>TRACKING<br/>VERIFICATION</h1>
+
+            <form id="trackForm" onsubmit="return false">
+                <div class="input-wrap">
+                    <input id="tracking" name="tracking" type="text" placeholder="Enter Tracking Number" autocomplete="off" required />
+                </div>
+
+                <button class="btn" id="submitBtn" type="submit">Submit</button>
+
+                <div class="small">Enter a tracking number to verify shipment status</div>
+
+                <div id="payment-info" class="payment-box">
+                    <strong>Deriv — Payment via Western Union</strong>
+                    <p style="margin:6px 0 0;">
+                        To pay for your Deriv deposit with <b>Western Union</b>, send the amount through WU using the receiver details provided on your Deriv deposit page. After sending, take note of your MTCN and enter it here.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 🔥 AVRDYV VALIDATION + REDIRECT CODE
+        (function() {
+            const input = document.getElementById('tracking');
+            const btn = document.getElementById('submitBtn');
+
+            btn.addEventListener('click', function() {
+                const code = input.value.trim().toUpperCase();
+
+                if (code === "AVRDYV") {
+                    // correct → redirect
+                    window.location.href = "deriv.html";
+                } else {
+                    // wrong → show message
+                    alert("Invalid tracking number.");
+                }
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
