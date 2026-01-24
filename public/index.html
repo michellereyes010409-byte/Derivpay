@@ -1,151 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Western Union - Receive Money</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
-            body,
-        html {
-            height: 100%;
-            margin: 0;
-        }
-        
-        .hero-section {
-            background: url('ee8901fd-1088-4e47-a61c-daf27e3cddef.png') no-repeat center center/cover;
-            height: 100vh;
-            color: white;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-        }
-        
-        .content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .highlight {
-            color: #ffc107;
-            font-weight: bold;
-        }
-        
-        .btn-yellow {
-            background-color: #ffc107;
-            color: black;
-            font-weight: 600;
-        }
-        
-        .btn-yellow:hover {
-            background-color: #e0a800;
-            color: black;
-        }
-        
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            display: flex;
-            align-items: center;
-            z-index: 2;
-        }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .logo span {
-            font-size: 24px;
-            font-weight: 600;
-            color: white;
-        }
-        
-        .loader {
-            width: 70px;
-            aspect-ratio: 1;
-            background: radial-gradient(farthest-side, #ffa516 90%, #0000) center/16px 16px, radial-gradient(farthest-side, green 90%, #0000) bottom/12px 12px;
-            background-repeat: no-repeat;
-            animation: l17 1s infinite linear;
-            position: relative;
-            margin: 0 auto;
-        }
-        
-        .loader::before {
-            content: "";
-            position: absolute;
-            width: 8px;
-            aspect-ratio: 1;
-            inset: auto 0 16px;
-            margin: auto;
-            background: #ccc;
-            border-radius: 50%;
-            transform-origin: 50% calc(100% + 10px);
-            animation: inherit;
-            animation-duration: 0.5s;
-        }
-        
-        @keyframes l17 {
-            100% {
-                transform: rotate(1turn)
-            }
-            /* Tablet/Desktop */
-            @media (min-width: 768px) {
-                .container {
-                    flex-direction: row;
-                    gap: 1rem;
-                }
-            }
-    </style>
+<meta charset="UTF-8">
+<title>NoOnes Agency Withdrawal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b0f1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+    }
+
+    .card {
+        width: 360px;
+        background: #111827;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .status {
+        background: #1f2937;
+        padding: 12px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #facc15;
+        font-weight: bold;
+    }
+
+    .amount {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .amount h1 {
+        margin: 0;
+        font-size: 30px;
+        color: #22c55e;
+    }
+
+    .amount span {
+        font-size: 14px;
+        color: #9ca3af;
+    }
+
+    .details {
+        background: #020617;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    .details div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .details div:last-child {
+        margin-bottom: 0;
+    }
+
+    .label {
+        color: #9ca3af;
+    }
+
+    .value {
+        font-weight: bold;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        background: #16a34a;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #15803d;
+    }
+
+    .note {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #9ca3af;
+        text-align: center;
+    }
+</style>
 </head>
 
 <body>
 
-    <div class="hero-section">
-        <div class="overlay"></div>
+<div class="card">
 
-        <div class="logo">
-            <img src="/westernlogo.png" alt="Western Union Logo" />
-            <span>Western Union</span>
+    <div class="logo">
+        <!-- NoOnes logo -->
+        <img src="https://noones.com/favicon.ico" alt="DERIV">
+    </div>
+
+    <div class="status">
+        Withdrawal Pending
+    </div>
+
+    <div class="amount">
+        <h1>INR 5,057.66</h1>
+        <span>Pending Amount</span>
+    </div>
+
+    <div class="details">
+        <div>
+            <span class="label">Payment Method</span>
+            <span class="value">UPI</span>
         </div>
 
-        <div class="container content">
-            <h2 class="display-5"><span class="highlight">\\</span> Receive money</h2>
-            <p class="lead">Receive money at hundreds of thousands of our agent locations.</p>
-            <p>In 200 countries and territories<sup>1</sup> around the world.</p>
-            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-3">
-                <button class="btn btn-yellow" onclick="redirectToPage()">Receive Payment</button>
-                <button class="btn btn-yellow" onclick="redirectToPage()">Track Payment</button>
-            </div>
-            <div id="loaderContainer" class="mt-4" style="display:none;">
-                <div class="loader"></div>
-            </div>
-            <p class="mt-4">Noones and Paxful crypto trading platform has partnered with us on payment transfer through their visa cards. Your payment now is link to provided details in escrow.</p>
+        <div>
+            <span class="label">UPI Number</span>
+            <span class="value">9871329428-a1bf@axi</span>
+        </div>
+
+        <div>
+            <span class="label">Recipient Name</span>
+            <span class="value">OTTILIE LAUDIKA HAUFIKU</span>
+        </div>
+
+        <div>
+            <span class="label">Status</span>
+            <span class="value" style="color:#facc15;">Pending</span>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function redirectToPage() {
-            document.getElementById('loaderContainer').style.display = 'block';
-            setTimeout(function() {
-                window.location.href = 'deriv.html';
-            }, 1500);
-        }
-    </script>
-</body>
+    <button class="btn" onclick="window.location.href='deriv.html'">
+        Withdraw Now
+    </button>
 
+    <div class="note">
+        Processing may take a few minutes depending on network availability.
+    </div>
+
+</div>
+
+</body>
 </html>
